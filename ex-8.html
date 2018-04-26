@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+    </head>
+
+    <body>
+
+        <h3>Esercizio8</h3>
+        <p>Image changing with the different mouse positions/actions</p>
+        
+        <img id="imm" src="./images/smile1.png" alt="immagine" title="immagine">
+        
+        <script type="text/javascript">
+
+            const imm=document.getElementById("imm")
+            imm.addEventListener("mouseover", FunzioneOnMouseOver)
+            imm.addEventListener("mouseout", FunzioneOnMouseOut)
+            imm.addEventListener("click", FunzioneOnClick)
+            imm.addEventListener("contextmenu", FunzioneOnContextMenu)
+
+            function FunzioneOnMouseOver() {
+                imm.src="./images/smile3.png";           
+            }
+
+            function FunzioneOnMouseOut() {
+                imm.src="./images/smile1.png";
+            }
+
+            function FunzioneOnClick() {
+                imm.src="./images/smile2.png";
+            }
+
+            function FunzioneOnContextMenu() {
+                imm.src="./images/smile4.png";
+            }
+        </script>
+
+    </body>
+</html>

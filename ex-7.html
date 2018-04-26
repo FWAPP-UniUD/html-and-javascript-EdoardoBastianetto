@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+    </head>
+
+    <body>
+
+        <h3>Esercizio7</h3>
+        <p>Image changing with the different mouse positions</p>
+
+        <!--per diversificare dagli esercizi successivi non è stato usato addEventListener-->
+        <img id="imm" src="./images/immagineScelta.jpg" alt="immagine" title="immagine" 
+        onmouseover="FunzioneOnMouseOver()" onmouseout="FunczioneOnMouseOut()" onclick="FunzioneOnClick()" oncontextmenu="FunzioneOnContextMenu()" >
+
+        <script>
+            function FunzioneOnMouseOver() {
+                window.alert("The mouse is placed onto the image")
+            }
+
+            function FunczioneOnMouseOut() {
+                window.alert("The mouse is moved outside the image")
+            }
+
+            function FunzioneOnClick() {
+                window.alert("The mouse is clicked on the image")
+            }
+
+            function FunzioneOnContextMenu() {
+                window.alert("The mouse is right-clicked on the image")
+            }
+        </script>
+
+    </body>
+</html>

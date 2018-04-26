@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+    </head>
+
+    <body>
+
+        <h3>Esercizio 5-6: Esempio form</h3>
+
+        <script type="text/javascript">
+            function LimitaScelteSceltaMultipla(el,max){
+                let nSelezionati = 0;
+                const Selettore = document.getElementById('Selettore');
+                
+                for (i=0; i < Selettore.options.length; i++) {
+                    if (Selettore.options[i].selected) {
+                        nSelezionati++;
+                    }
+                }
+                
+                if (nSelezionati > max) {
+                    el.selected = false; 
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+        <form action="http://satt.diegm.uniud.it/wa/test_form.php">
+          
+            <fieldset>
+                <legend>Esempio login</legend>
+                <label>Nickname</label> <input type="text" name="Username">
+                <label>Password</label> <input type="password" name="Password">
+                <input type = "submit">
+            </fieldset>
+
+            <fieldset>
+                <legend>Esempio Radio box: mutuo esclusivi</legend>
+                <input type="radio" name="r" value="r1"/> r1 (default)
+                <input type="radio" name="r" value="r2"/> r2
+                <input type="radio" name="r" value="r3"/> r3
+            </fieldset>
+            <fieldset>
+                <legend>Esempio Checkbox</legend>
+                <input type="checkbox" name="b1" value="b1" checked="Checked"/> Box 1 (default)
+                <input type="checkbox" name="b2" value="b2" checked="Checked"/> Box 2 (default)
+                <input type="checkbox" name="b3" value="b3"/> Box 3
+            </fieldset>
+            <fieldset>
+                <legend>Esempio lista multipla con numero massimo selezioni fissato</legend>
+                <select id="Selettore" name="sceltaMultipla" multiple size="5">
+                    <option onclick="LimitaScelteSceltaMultipla(this,2)" value="valore1">Selezione 1</option>
+                    <option onclick="LimitaScelteSceltaMultipla(this,2)" value="valore2">Selezione 2</option>
+                    <option onclick="LimitaScelteSceltaMultipla(this,2)" value="valore3">Selezione 3</option>
+                    <option onclick="LimitaScelteSceltaMultipla(this,2)" value="valore4">Selezione 4</option>
+                    <option onclick="LimitaScelteSceltaMultipla(this,2)" value="valore5">Selezione 5</option>
+                </select>
+            </fieldset>
+        
+        </form>
+
+    </body>
+</html>

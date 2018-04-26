@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+    </head>
+
+    <body>
+
+        <h3>Esercizio 10</h3>
+        <p>Write an HTML document with a form having a checkbox and a fieldset (i.e., a group of input ﬁelds). 
+         Write the Javascript code so that the ﬁeldset will be disabled if the check-box is not marked.</p>
+
+        <form>
+            <fieldset>
+                <legend>Installa tutti i pacchetti</legend>
+                <input id="checkboxPrincipale" type="checkbox" name="p1" value="p1"/> Installazione personalizzata Y/N
+            </fieldset>
+
+            <fieldset id="checkboxSecondarie" disabled>
+                <legend>Impostazioni personalizzate</legend>
+                <input type="checkbox" name="p1" value="p1"/> pacchetto1 (consigliato)
+                <input type="checkbox" name="p2" value="p2"/> pacchetto2 (consigliato)
+                <input type="checkbox" name="p3" value="p3"/> pacchetto3
+            </fieldset>
+
+            <br>
+            <button>Procedi</button>
+        </form>
+
+        <script type="text/javascript">
+            const checkboxPrincipale = document.getElementById("checkboxPrincipale");
+            const checkboxSecondarie = document.getElementById("checkboxSecondarie");
+    
+            checkboxPrincipale.addEventListener("click", Abilita)
+    
+            function Abilita(){
+                if(!checkboxPrincipale.checked) {checkboxSecondarie.setAttribute("disabled","disabled");}
+                else {checkboxSecondarie.removeAttribute("disabled");}
+            }
+    
+        </script>
+
+    </body>
+</html>

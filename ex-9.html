@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+    </head>
+
+    <body>
+
+        <!--per diversificare dagli esercizi successivi non è stato usato addEventListener-->
+        <h3>Esercizio 9</h3>
+
+        <script type="text/javascript">
+            function ChangeStatus(action){
+                par=document.getElementById("paragrafo")
+                if(par==null){
+                    if(action=="visible"){
+                        CreaParagrafo();
+                        document.getElementById("stato").textContent="Paragrafo creato";
+                    }
+                    else {                        
+                        document.getElementById("stato").textContent="Il paragrafo non è ancora esistente";
+                    }
+                } 
+                else{
+                    if(par.style.visibility!=action) document.getElementById("stato").textContent="Cambio stato in: " + action;
+                    else document.getElementById("stato").textContent="Il paragrafo è già in stato: " + action;
+                    document.getElementById("paragrafo").style.visibility=action;
+                }
+            }           
+
+            function CreaParagrafo(){
+                var nuovo=document.createElement("p")
+                nuovo.textContent="Lorem ipsum... "
+                nuovo.id="paragrafo"
+                nuovo.style.visibility="visible"
+                const qui = document.getElementById("placeholder")
+                qui.appendChild(nuovo)
+            } 
+
+        </script>     
+
+        <p>Premere i pulsanti "Hide" e "Seek" per cambiare lo stato di 
+            visibilità del testo sottostante.</p>
+
+        <button onclick="ChangeStatus('hidden')">Hide</button>
+        <button onclick="ChangeStatus('visible')">Seek</button>
+
+        <div id="placeholder">          
+        </div>
+        <div id="stato"> Stato: paragrafo non creato </div>
+
+        
+
+    </body>
+</html>
